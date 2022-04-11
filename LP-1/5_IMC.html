@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+<h2>Ejercicio 3</h2>
+<h2>Calculo IMC</h2>
+
+<script>
+
+    //Funcion SIN parametro de entrada 
+    function saltarLinea() {
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    //Funcion CON parametro de entrada
+    function imprimir(frase){
+        document.write(frase);
+        saltarLinea();
+    }
+
+    //const imc = peso/(Math.pow(altura,2))
+    
+    function calcularImc (peso, altura){
+        return (peso/(Math.pow(altura,2)));
+    }
+
+    const pesoJulian = 80;
+    const alturaJulian = 1.76;
+
+    const imcJulian = calcularImc(pesoJulian,alturaJulian);
+    const imcPepe = calcularImc(90,1.5,"Pepe");
+
+    imprimir("El promedio de los IMC de Julian y Pepe es de: " + (imcJulian+imcPepe)/2);
+
+    // Como pedir informacion al usuario? 'prompt()'
+
+    const nombreUsuario = prompt("Dijite su nombre: ");
+    const pesoUsuario = prompt(nombreUsuario + " por favor dijiste su peso: ");
+    const alturaUsuario = prompt(nombreUsuario + " por favor dijite su altura: ");
+    
+    imprimir("El imc del usuario "+ nombreUsuario + " es: " + calcularImc(pesoUsuario,alturaUsuario))
+
+</script>
+
+<h3>Lo que aprendimos</h2>
+    <ul>
+        <li>Creamos un programa para calcular IMC.</li>
+        <li>Profundizamos en el retorno de funciones.</li>
+    </ul> 
