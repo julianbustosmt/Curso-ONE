@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<script>
+
+    const inicioDeSesionRegistrado = "alura";
+    const contrasenhaRegistrada = "alura321";
+
+
+
+
+    for (intentos = 1; intentos <= 3; intentos++) {
+        let inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        let contrasenhaIngresada = prompt("Ingrese su contraseña");
+        if (inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            break;
+        } else {
+            if (intentos == 3) {
+                alert("Usuario bloquedo")
+            } else {
+                alert("inicio de sesión inválido. Te quedan " + (3-intentos) + " intento(s)");
+            }
+        }
+
+    }
+
+</script>
