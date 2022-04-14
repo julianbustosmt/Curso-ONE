@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<h1>Programa para calcular IMC del usuario</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+        document.write("<hr>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }  
+    function imprimir(frase) {
+        document.write("<big>"+ frase + "</big>");
+        saltarLinea();
+    }
+
+    function calcularImc (peso, altura){
+        return (peso/(Math.pow(altura,2)));
+    }
+
+    const nombreUsuario = prompt("Dijite su nombre: ");
+    const pesoUsuario = prompt(nombreUsuario + " por favor dijiste su peso: ");
+    const alturaUsuario = prompt(nombreUsuario + " por favor dijite su altura: ");
+    const imcUsuario = calcularImc(pesoUsuario,alturaUsuario)
+    imprimir("El imc del usuario "+ nombreUsuario + " es: " + imcUsuario)
+
+    if(imcUsuario < 18.5){
+        imprimir("IMC abajo de lo recomendado")
+    }
+
+    if(imcUsuario >= 18.5 && imcUsuario < 25) {
+        imprimir("IMC dentro de lo recomendado")
+    }
+
+    if(imcUsuario >= 25 && imcUsuario < 30){
+        imprimir("IMC por encima de lo recomendado")
+    }
+
+    if(imcUsuario >= 30){
+        imprimir("IMC considerado como obesidad")
+    }
+    
+
+
+</script>
