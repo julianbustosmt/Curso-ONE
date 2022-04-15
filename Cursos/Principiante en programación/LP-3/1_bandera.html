@@ -1,0 +1,58 @@
+<canvas width="1920" height="1080">
+
+</canvas>
+<script>
+    const pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "#FFCD00";
+    pincel.fillRect(0,0,1920,540);
+
+    pincel.fillStyle = "#003087";
+    pincel.fillRect(0,540,1920,270);
+
+    pincel.fillStyle = "#C8102E";
+    pincel.fillRect(0,810,1920,270);
+
+    
+    // O //
+    pincel.fillStyle = "#D40606";
+    pincel.beginPath();
+    pincel.arc(500,540,200,0,2*Math.PI)
+    pincel.fill()
+
+    pincel.fillStyle = "#FFCD00";
+    pincel.beginPath();
+    pincel.arc(500,540,110,Math.PI,(Math.PI)*2)
+    pincel.fill()
+
+    pincel.fillStyle = "#003087";
+    pincel.beginPath();
+    pincel.arc(500,540,110,0,Math.PI)
+    pincel.fill()
+
+    // N //
+    pincel.fillStyle = "#D40606";
+
+    // |
+    pincel.fillRect(750,340,90,400)
+
+    //    |
+    pincel.fillRect(1050,340,90,400);
+
+    // \ 
+    pincel.beginPath();
+    pincel.moveTo(840,340);
+    pincel.lineTo(1050,620);
+    pincel.lineTo(1050,740);
+    pincel.lineTo(840,460);
+    pincel.lineTo(840,340);
+    pincel.fill();
+
+    // E
+    pincel.fillRect(1190,340,90,400);
+    pincel.fillRect(1280,340,150,80)
+    pincel.fillRect(1280,495,150,80)
+    pincel.fillRect(1280,660,150,80)
+
+</script>
