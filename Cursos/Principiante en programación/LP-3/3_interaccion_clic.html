@@ -1,0 +1,47 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    let pantalla = document.querySelector("canvas");
+    let pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "grey"
+    pincel.fillRect(0, 0, 600, 400)
+
+    function exibirAlerta(evento) {
+
+        let x = evento.pageY - pantalla.offsetLeft;
+        let y = evento.pageX - pantalla.offsetTop;
+
+        pincel.fillStyl = "blue"
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * Math.PI)
+        pincel.fill()
+        console.log(evento)
+        alert("Usted hizo un clic");
+        alert(x + "," + y)
+
+    }
+
+    function dibujarCirculo(evento) {
+
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+
+        pincel.fillStyle = "blue"
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * Math.PI)
+        pincel.fill()
+        console.log(evento)
+        console.log(x + "," + y)
+
+    }
+
+    pantalla.onclick = dibujarCirculo;
+
+</script>
+
+<h3>Lo que aprendimos</h2>
+    <ul>
+        <li>A interactuar con el usuario a través de los eventos.</li>
+        <li>A asociar funciones con los eventos y a capturar las propiedades del evento para pasarlas como parámetro.</li>
+    </ul>
