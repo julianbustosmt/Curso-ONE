@@ -1,0 +1,88 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var puedoDibujar = false;
+    let dimensionPaleta = 50;
+
+    const paleta = ["blue", "green", "red"]
+    function crearPaleta(paleta) {
+        x = 0;
+        for (let i = 0; i < paleta.length; i++) {
+            pincel.fillStyle = paleta[i]
+            pincel.fillRect(x, 0, dimensionPaleta, dimensionPaleta)
+            x += dimensionPaleta
+        }
+    }
+    crearPaleta(paleta)
+
+    let color = "blue"
+
+    function cambiarColor(evento) {
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+        console.log(x)
+        console.log(y)
+
+        if ((x <= dimensionPaleta) &&
+            (y <= dimensionPaleta)) {
+            color = (paleta[0])
+            console.log(color)
+        }
+        if ((x > dimensionPaleta) &&
+            (x <= dimensionPaleta * 2) &&
+            (y <= dimensionPaleta)) {
+            color = (paleta[1])
+            console.log(color)
+        }
+        if ((x > dimensionPaleta * 2) && (x < dimensionPaleta * 3) &&
+            (y <= dimensionPaleta)) {
+            color = (paleta[2])
+            console.log(color)
+        }
+    }
+
+
+    pantalla.onclick = cambiarColor;
+
+    function dibujarCirculo(evento) {
+
+        if (puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            if (x > dimensionPaleta * paleta.length || y > dimensionPaleta) {
+                pincel.arc(x, y, 5, 0, 2 * 3.14);
+            }
+
+            pincel.fill();
+        }
+
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+    function habilitarDibujar() {
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+        puedoDibujar = false;
+    }
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>
+
+<h3>Como funciona? </h2>
+    <ul>
+        <li>Puedes dibujar sosteniendo el clic derecho o izquierdo.</li>
+        <li>Para cambiar de color puedes dar click en cualquira de los colores de la parte superior.</li>
+    </ul>
