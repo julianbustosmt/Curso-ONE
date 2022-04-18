@@ -1,7 +1,19 @@
 header{
     background-color: #BBBBBB;
+    padding: 20px 0;
 }
 
+.caja{
+    width: 70%;
+    position: relative;
+    margin: 0 auto;
+}
+
+nav{
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
 nav li{
     display: inline-block;
     margin: 0 0 0 15px;
