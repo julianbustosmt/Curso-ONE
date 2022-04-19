@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Contacto - Barberia Alura</title>
     <link rel="stylesheet" href="../../HTML_CSS-2/2_Barberia_productos/reset.css">
     <link rel="stylesheet" href="../../HTML_CSS-2/2_Barberia_productos/style.css">
 </head>
+
 <body>
     <header>
         <div class="caja">
@@ -22,13 +24,37 @@
     <main>
         <form action="">
             <label for="nombreApellido">Nombre y apellido</label>
-            <input type="text" id="nombreApellido">
+            <input type="text" id="nombreApellido" class="input-padron">
 
             <label for="correoElectronico">Correo electronico</label>
-            <input type="text" id="correoElectronico">
+            <input type="text" id="correoElectronico" class="input-padron">
 
             <label for="telefono">Telefono</label>
-            <input type="text" id="telefono">
+            <input type="text" id="telefono" class="input-padron">
+
+            <label for="mensaje"></label>
+            <textarea name="mensaje" id="mensaje" cols="70" rows="10" class="input-padron"></textarea>
+
+            <div>
+                <p>Como le gustaria que lo contactemso?</p>
+                <label for="radio-email"><input name="contacto" type="radio" value="email" id="radio-email" >Email</label>
+                
+                <label for="radio-telefono"><input name="contacto" type="radio" value="telefono" id="radio-telefono" >Telefono</label>
+                
+                <label for="radio-whatsApp"><input name="contacto" type="radio" value="whatsApp" id="radio-whatsApp" >WhatsApp</label>
+                
+            </div>
+
+            <div>
+                <p>En cual horario prefiere ser atendido?</p>
+                <select>
+                    <option>Mañana</option>
+                    <option>Tarde</option>
+                    <option>Noche</option>
+                </select>
+            </div>
+
+            <label class="checkbox"><input type="checkbox">Le gustaria recibir novedades de la barberia Alura?</label>
 
             <input type="submit" value="Enviar formulario">
         </form>
@@ -38,4 +64,5 @@
         <p class="copyright">&copy Copyright Barberia alura - 2022</p>
     </footer>
 </body>
+
 </html>
