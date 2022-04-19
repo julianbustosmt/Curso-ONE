@@ -28,7 +28,7 @@ nav a{
 }
 
 .productos{
-    width: 70%;
+    width: 1200px;
     margin: 0 auto;
     padding: 50px;
 }
@@ -42,9 +42,11 @@ nav a{
     text-align: center;
     width: 30%;
     vertical-align: top;
-    margin: 0, 1.5%;
+    margin: 0 1.5%;
     padding: 30px 20px;
     box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .productos-descripcion{
