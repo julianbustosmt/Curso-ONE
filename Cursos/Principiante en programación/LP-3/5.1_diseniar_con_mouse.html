@@ -23,7 +23,7 @@
 
     let color = "blue"
 
-    function cambiarColor(evento) {
+    /*function cambiarColor(evento) {
         let x = evento.pageX - pantalla.offsetLeft;
         let y = evento.pageY - pantalla.offsetTop;
         console.log(x)
@@ -45,7 +45,24 @@
             color = (paleta[2])
             console.log(color)
         }
-    }
+    }*/
+
+    function cambiarColor(evento) {
+    let x = evento.pageX - pantalla.offsetLeft;
+    let y = evento.pageY - pantalla.offsetTop;
+
+    let paletaInicialX = 0;
+    let paletaFinalX = dimensionPaleta
+
+    for(let i = 0; i < paleta.length; i++){
+        if ((x > paletaInicialX) && (x <= paletaFinalX) && (y <= dimensionPaleta)) {
+            color = (paleta[i])
+            console.log(color)
+        }
+
+        paletaInicialX += dimensionPaleta
+        paletaFinalX += dimensionPaleta
+}}
 
 
     pantalla.onclick = cambiarColor;
