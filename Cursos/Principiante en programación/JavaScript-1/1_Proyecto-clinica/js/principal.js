@@ -1,30 +1,39 @@
-const paciente = document.querySelector("#primerPaciente")
+const pacientes = document.querySelectorAll(".paciente")
+console.log(pacientes)
 
-const tdpeso = paciente.querySelector(".info-peso")
-const peso = tdpeso.textContent
+for (let i = 0; i < pacientes.length; i++) {
+    let paciente = pacientes[i]
 
-const tdAltura = paciente.querySelector(".info-altura")
-const altura = tdAltura.textContent
+    const tdpeso = paciente.querySelector(".info-peso")
+    const peso = tdpeso.textContent
 
-const tdIMC = paciente.querySelector(".info-imc")
+    const tdAltura = paciente.querySelector(".info-altura")
+    const altura = tdAltura.textContent
 
-let pesoEsValido = true
-let alturaEsValida = true
+    const tdIMC = paciente.querySelector(".info-imc")
 
-if(peso < 0 || peso > 100){
-    console.log("Peso Incorrecto")
-    tdpeso.textContent = "Peso Incorrecto"
-    pesoEsValido = false
+    let pesoEsValido = true
+    let alturaEsValida = true
+
+    if (peso < 0 || peso > 100) {
+        console.log("Peso Incorrecto")
+        tdIMC.textContent = "Peso Incorrecto"
+        pesoEsValido = false
+        paciente.classList.add("paciente-incorrecto")
+    }
+
+    if (altura < 0 || altura > 4) {
+        console.log("Altura Incorrecto")
+        tdIMC.textContent = "Altura Incorrecta"
+        alturaEsValida = false
+        paciente.classList.add("paciente-incorrecto")
+    }
+
+    if (pesoEsValido && alturaEsValida) {
+        const imc = peso / Math.pow(altura, 2)
+        tdIMC.textContent = imc.toFixed(2)
+    }
+
 }
 
 
-if(altura < 0 || altura > 4){
-    console.log("Altura Incorrecto")
-    tdAltura.textContent = "Altura Incorrecta"
-    alturaEsValida = false
-}
-
-if(pesoEsValido && alturaEsValida){
-    const imc = peso/Math.pow(altura,2)
-    tdIMC.textContent = imc
-}
