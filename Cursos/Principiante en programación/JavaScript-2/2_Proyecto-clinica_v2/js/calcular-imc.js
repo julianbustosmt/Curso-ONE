@@ -6,6 +6,14 @@ const calcularIMC = (peso,altura) =>{
     return imc.toFixed(2)
 }
 
+const validarPeso = (peso) =>{
+    return(peso >= 0 && peso < 1000)
+}
+
+const validarAltura = (altura) =>{
+    return(altura >= 0 && altura < 4)
+}
+
 for (let i = 0; i < pacientes.length; i++) {
     let paciente = pacientes[i]
 
@@ -17,17 +25,17 @@ for (let i = 0; i < pacientes.length; i++) {
 
     const tdIMC = paciente.querySelector(".info-imc")
 
-    let pesoEsValido = true
-    let alturaEsValida = true
+    let pesoEsValido = validarPeso(peso)
+    let alturaEsValida = validarAltura(altura)
 
-    if (peso < 0 || peso > 100) {
+    if (!pesoEsValido) {
         console.log("Peso Incorrecto")
         tdIMC.textContent = "Peso Incorrecto"
         pesoEsValido = false
         paciente.classList.add("paciente-incorrecto")
     }
 
-    if (altura < 0 || altura > 4) {
+    if (!alturaEsValida) {
         console.log("Altura Incorrecto")
         tdIMC.textContent = "Altura Incorrecta"
         alturaEsValida = false
@@ -37,7 +45,5 @@ for (let i = 0; i < pacientes.length; i++) {
     if (pesoEsValido && alturaEsValida) {
         calcularIMC(peso,altura)
     }
-
 }
-
 

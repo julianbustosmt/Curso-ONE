@@ -8,9 +8,19 @@ btnAdicionar.addEventListener("click", function (event) {
     //Capturando la tabla
     const tabla = document.querySelector("#tabla-pacientes")
     const pacienteTr = construirTr(paciente)
+    const errores = validarPaciente(paciente)
+    
+    if(errores.length > 0){
+        exhibirMesajesErrores(errores)
+        return;
+    }
+    
     //Asiganación del tr al la tabla
     tabla.appendChild(pacienteTr)
     form.reset()
+
+    const mensajesErrores = document.querySelector("#mensajes-errores")
+    mensajesErrores.innerHTML = ""
 })
 
 const capturarDatosPaciente = (form) => {
@@ -46,4 +56,38 @@ const construirTd = (dato,clase) =>{
     td.classList.add(clase)
     td.textContent = dato
     return td
+}
+
+const validarPaciente = (paciente) =>{
+    
+    let errores = []
+    if(paciente.nombre.length === 0){
+        errores.push("Ingrese un nombre") 
+    }
+    if(paciente.peso.length === 0){
+        errores.push("Ingrese el peso") 
+    }
+    if(paciente.altura.length === 0){
+        errores.push("Ingrese la altura") 
+    }
+    if(paciente.gordura.length === 0){
+        errores.push("Ingrese el % de gordura") 
+    }
+    if(!validarPeso(paciente.peso)){
+        errores.push("El peso es incorrecto") 
+    }
+    if(!validarAltura(paciente.altura)){
+        errores.push("La altura es incorrecta") 
+    }
+    return errores
+}
+
+const exhibirMesajesErrores = (errores) =>{
+    const ul = document.querySelector("#mensajes-errores")
+    ul.innerHTML = ""
+    errores.forEach(error => {
+        const li = document.createElement("li")
+        li.textContent = error
+        ul.appendChild(li)
+    });
 }
