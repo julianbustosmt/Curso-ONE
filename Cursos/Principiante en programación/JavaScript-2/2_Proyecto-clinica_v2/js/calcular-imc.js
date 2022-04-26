@@ -1,4 +1,4 @@
-const pacientes = document.querySelectorAll(".paciente")
+let pacientes = document.querySelectorAll(".paciente")
 
 const calcularIMC = (peso,altura) =>{
     var imc = peso/Math.pow(altura,2)
