@@ -1,5 +1,4 @@
 const pacientes = document.querySelectorAll(".paciente")
-console.log(pacientes)
 
 const calcularIMC = (peso,altura) =>{
     var imc = peso/Math.pow(altura,2)
@@ -29,14 +28,12 @@ for (let i = 0; i < pacientes.length; i++) {
     let alturaEsValida = validarAltura(altura)
 
     if (!pesoEsValido) {
-        console.log("Peso Incorrecto")
         tdIMC.textContent = "Peso Incorrecto"
         pesoEsValido = false
         paciente.classList.add("paciente-incorrecto")
     }
 
     if (!alturaEsValida) {
-        console.log("Altura Incorrecto")
         tdIMC.textContent = "Altura Incorrecta"
         alturaEsValida = false
         paciente.classList.add("paciente-incorrecto")
