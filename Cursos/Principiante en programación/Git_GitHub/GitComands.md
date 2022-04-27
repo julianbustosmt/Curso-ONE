@@ -9,6 +9,7 @@
     - ``--oneline`` : Nos muestra todos los commits en una sola linea.
     - ``-p``: vemos mas detalle de cada commit.
     - ``--pretty="parámetros de formato"`` : Sive para visualizar de diferentes maneras el historial.
+    - ``--graph`` : Muestra de forma grafica el desplazamiento de las ramas.
       - Nota: Para salir de esta pantalla debemos usar ``:q``
 
 ## Git remoto
@@ -27,6 +28,7 @@
 - ``git checkout <nombre rama>``: Permite desplazarse entre las ramas creadas por git branch.
   - ``-b <nombre rama>``: Crea una rama y nos mueve a esta. 
 - ``git merge <rama>``: Une la rama seleccionada con la rama main.
+- ``git rebase <rama>``: Esa substituye a git merge ya que traslada todos los commits de la rama actual a la rama master.
 
 
 # Comandos de configuración
