@@ -12,7 +12,10 @@
     - ``--graph`` : Muestra de forma grafica el desplazamiento de las ramas.
       - Nota: Para salir de esta pantalla debemos usar ``:q``
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc2eb486150f882b5b8f9a51189eb9806dcf4cf0
 ## Git remoto
 - ``git init --bare``: Crea un repositorio en el cual unicamente se almacenaran las modificaciones de nuestros archivos (servidor).
 - ``git remote``: Lista todos los servidores remotos a los que nuestro repositorio tiene acceso.
@@ -23,13 +26,17 @@
 - ``git remote rename <nombre original> <nombre asignado>``:cambiar el nombre del servidor. Por defecto es **origin**.
 - ``git pull </servidor> <rama>``: Sincroniza el repositorio local con el repositorio remoto. 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc2eb486150f882b5b8f9a51189eb9806dcf4cf0
 ## Branches / Ramas
 - ``git branch``: Muestra la rama en la que nos encontramos.
 - ``git brach <nombre rama>``: Crea una rama con el <\nombre> asignado.
 - ``git checkout <nombre rama>``: Permite desplazarse entre las ramas creadas por git branch.
   - ``-b <nombre rama>``: Crea una rama y nos mueve a esta. 
 - ``git merge <rama>``: Une la rama seleccionada con la rama main.
+<<<<<<< HEAD
 - ``git rebase <rama>``: Substituye a git merge ya que traslada todos los commits de la rama actual a la rama master.
 
 
@@ -48,6 +55,10 @@
 - ``git diff <hash Inicial>..<hash Final>``: Muestra las acciones realizadas en el intervalo especificado. Nos sirve para indentificad bugs o fallas. 
 - ``git tag -a <nombre> -m "mensaje"``:Generalmente, el etiquetado se usa para capturar un punto en el historial que se utiliza para una publicación de versión marcada (por ejemplo, v1.0.1).Una etiqueta es como una rama que no cambia.
 - ``git push origin <tag>``: Subimos a nuestro repositorio remoto el tag creado.
+=======
+- ``git rebase <rama>``: Esa substituye a git merge ya que traslada todos los commits de la rama actual a la rama master.
+
+>>>>>>> cc2eb486150f882b5b8f9a51189eb9806dcf4cf0
 
 # Comandos de configuración
 ## Local
