@@ -17,7 +17,7 @@
     font-weight: 700;
     text-transform: uppercase;
 
-    margin-bottom: 1.5rem;
+    margin: 1.5rem;
 }
 
 .llamada__texto {
@@ -30,3 +30,4 @@
 .llamada__boton {
     width: 100%;
 }
+
