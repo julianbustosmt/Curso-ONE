@@ -36,10 +36,14 @@ cliente2.rutCliente = "33132131";
 const cuentaCorriente2 = new cuentaCorriente();
 cuentaCorriente2.numero = "1213123312313";
 cuentaCorriente2.agencia = "elPepe2";
-cuentaCorriente2.cliente = cliente2;
+cuentaCorriente2.setCliente = cliente2;
 
 cuentaCorriente1.transferir(100,cuentaCorriente2);
 console.log('Cuenta 2: ', cuentaCorriente2)
 
 console.log(cuentaCorriente2.verSaldo());
 console.log(cuentaCorriente1.verSaldo());
+
+cuentaCorriente2.cliente = 0
+
+console.log(cuentaCorriente2.getCliente)

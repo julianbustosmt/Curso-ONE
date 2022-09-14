@@ -1,16 +1,27 @@
+import { cliente } from "./cliente.js";
+
 export class cuentaCorriente {
-    cliente;
+    #cliente;
     numero;
     #saldo; // # Convierte el atributo en privado
     //saldo; 
     agencia;
 
+    set setCliente(valor){
+        if(valor instanceof cliente){
+        this.#cliente = valor
+        }
+    }
+
+    get getCliente(){
+        return this.#cliente
+    }
 
     constructor(){
-        this.cliente = null
-        this.numero = ""
+        this.#cliente = null;
+        this.numero = "";
         this.#saldo = 0;
-        this.agencia = ""
+        this.agencia = "";
     }
 
     //Metodos 
@@ -18,25 +29,24 @@ export class cuentaCorriente {
         if(valor > 0){
             this.#saldo += valor;
         }
-        return this.#saldo
+        return this.#saldo;
     }
 
     retiro = (valor) =>{
         if(valor <= this.#saldo){
             this.#saldo -= valor;
         }else{
-            console.log("Saldo insuficiente")
+            console.log("Saldo insuficiente");
         }
-        return this.#saldo
+        return this.#saldo;
     }
 
     verSaldo = () =>{
-        return this.#saldo
+        return this.#saldo;
     }
 
     transferir = (valor,cuentaDestino) =>{
-        this.retiro(valor)
-        cuentaDestino.deposito(valor)
-
+        this.retiro(valor);
+        cuentaDestino.deposito(valor);
     }
 }
