@@ -1,0 +1,20 @@
+{
+  "name": "cuentasbancopopular",
+  "version": "1.0.0",
+  "description": "Gestión de cuentas corrientes del Banco Popular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianbustosmt/Curso-ONE.git"
+  },
+  "author": "Julian Bustos - ONE+Alura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julianbustosmt/Curso-ONE/issues"
+  },
+  "homepage": "https://github.com/julianbustosmt/Curso-ONE#readme",
+  "type": "module"
+}
