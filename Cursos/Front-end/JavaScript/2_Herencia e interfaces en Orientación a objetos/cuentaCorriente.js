@@ -1,14 +1,16 @@
-import { cliente } from "./cliente.js";
+import { Cliente } from "./cliente.js";
 
-export class cuentaCorriente {
+export class CuentaCorriente {
     #cliente;
     numero;
     #saldo; // # Convierte el atributo en privado
     //saldo; 
     agencia;
+    static cantidadCuentas = 0;
+
 
     set setCliente(valor){
-        if(valor instanceof cliente){
+        if(valor instanceof Cliente){
         this.#cliente = valor
         }
     }
@@ -17,11 +19,12 @@ export class cuentaCorriente {
         return this.#cliente
     }
 
-    constructor(){
-        this.#cliente = null;
-        this.numero = "";
+    constructor(cliente, numero, agencia){
+        this.setCliente = cliente;
+        this.numero = numero;
         this.#saldo = 0;
-        this.agencia = "";
+        this.agencia = agencia;
+        CuentaCorriente.cantidadCuentas ++
     }
 
     //Metodos 
