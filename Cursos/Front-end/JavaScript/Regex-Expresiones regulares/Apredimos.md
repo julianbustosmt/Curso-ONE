@@ -49,3 +49,21 @@ Lo que aprendimos en esta aula:
 - Podemos tener grupos y subgrupos.
 - Un grupo es retornado al momento ejecutar, lo que nos ayuda a seleccionar una parte del match.
 - A través de <code>?:</code> decimos que no queremos ver ese grupo en la  respuesta.
+
+
+## 05 Codicioso o Perezoso
+
+- ### Para saber mas: Negaciones 
+  
+  Esa negación es algo muy común en las regexes. Hay circunstancias en las cuales es más fácil definir lo que no queremos al invés de lo que queremos. La negación ^ nos ayuda en eso. Esa también es la razón de la existencia de clases como <code> \W </code> (con W mayúscula) y <code> \D </code> (con D mayúscula).
+
+  El <code> \W </code> es la non-word char, o sea, todo lo que no es un word char. \W es un atajo para <code> [^\w] </code>.
+
+  La clase <code> \D </code>, por su vez, es un non-digit, o sea, \D es un atajo para <code> [^\d] </code>.
+
+  Repara también que no usamos la tema char <code> ^ </code> como ancla* ya que no aparece dentro de una clase <code> [^>] </code>.
+
+Lo que aprendimos en esta aula:
+
+- Aprendimos que los quantifiers son codiciosos por patrón y que podemos utilizar un ? después del quantifier, dejándolo perezoso.
+- También aprendimos cómo podemos referirnos al texto de un grupo dentro de la regex, donde n es el número del grupo.
