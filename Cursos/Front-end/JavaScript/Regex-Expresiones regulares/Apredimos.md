@@ -9,14 +9,14 @@
     - <code>{1}</code> es un quantifier que significa una vez
     - <code>\*</code> es un quantifier que significa zero, una o más veces
     - <code>.</code> es un meta-char que significa cualquier char.
-    - Con <code> \ </code> podemos escapar meta-chars, por ejemplo /.
+    - Con <code> \ </code> podemos escapar meta-chars, por ejemplo <code> /. </code>
 
 ## 02 Clases de Caracteres
 
-- Podemos definir fácilmente la clase de cualquier carácter con <code> [A-Z]. </code>
-- \conociendo todos los quantifiers como <code> ?, +, * y {n}. </code>
-- \s significa whitespace y es un atajo para <code> [ \t\r\n\f]. </code>
-- \w significa word char y es un atajo para <code> [A-Za-z0-9_]. </code>
+- Podemos definir fácilmente la clase de cualquier carácter con <code> [A-Z] </code>.
+- \conociendo todos los quantifiers como <code> ?, +, * y {n} </code>.
+- \s significa whitespace y es un atajo para <code> [ \t\r\n\f] </code>.
+- \w significa word char y es un atajo para <code> [A-Za-z0-9_] </code>.
 
 
 ## 03 Encontrando la posicion con anclas
@@ -39,3 +39,13 @@ Lo que aprendimos en esta aula:
   - String: <code> español proporcional compor </code>
 
   - Pattern: <code> \Bpor\B </code>
+
+
+## 04 Trabajando con grupos
+
+Lo que aprendimos en esta aula:
+
+- Declara grupo <code>( ).</code>
+- Podemos tener grupos y subgrupos.
+- Un grupo es retornado al momento ejecutar, lo que nos ayuda a seleccionar una parte del match.
+- A través de <code>?:</code> decimos que no queremos ver ese grupo en la  respuesta.
