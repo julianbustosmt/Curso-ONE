@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const text = "11a22b33c"
+
+/*         const expresion = new RegExp('\\d{2}\\w', 'g') */
+        const expresion = /(\d{2})(\w)/g
+        console.log(expresion.test(text))
+
+        expresion.lastIndex = 0
+
+        while(resultado = expresion.exec(text)){
+            console.log(resultado)
+        }
+
+
+        var añoMesDia = '2007-12-31';
+        var exp = /-/g
+        /* replace , remplaza lo que necesitemos en una cadena de texto, podemos pasar una expresion regular como parametro  Recibe una expresión regular como primer parámetro, y como segundo, el nuevo texto que debe de sustituir todos los lugares que condicen con la expresión pasada.*/
+        añoMesDia = añoMesDia.replace(exp, '/');
+        console.log(añoMesDia)
+
+        var arquivo = '100,200-150,200;20';
+        var exp = /[,;-]/;
+        /* split devuelve un arreglo separando un string segun el parametro que le pasemo, el cual puede ser una expresion regular */
+        var valores = arquivo.split(exp);
+        console.log(valores)
+
+
+        var codigos = 'A121B12112C12212F12G01';
+        var exp = /[A-Za-z]\d+/g
+        /* match acepta una expresión regular y regresa un arreglo con todas las partes del blanco que atienden la expresión regular. */
+        var codigosExtraidos = codigos.match(exp);
+        console.log(codigosExtraidos)
+    </script>
+</body>
+</html>
